@@ -1,26 +1,41 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import PlayerCard from './components/PlayerCard';
+import axios from 'axios';
 
-function App() {
+
+
+
+
+class App extends React.Component{
+  constructor(){
+    super();
+    this.state = {
+      playerData: []
+    }
+  }
+  
+  componentDidMount(){
+    axios.get('http://localhost:5000/api/players').then(res => {
+      console.log('axios get', res)
+      this.setState({
+        playerData: res.data
+      })
+    })
+    .catch(err => console.error(err));
+  }
+
+  render(){
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+     <PlayerCard 
+      value = {this.state.playerData}
+     
+     
+     />
     </div>
   );
-}
+  }//closes render
+}//closes function
 
 export default App;
