@@ -17,12 +17,13 @@ function SearchForm(props) {
         props.handleSearch(form.search)
     }
     return(
-        <form  onSubmit={handleSubmit}>
+        <form data-testid="searchForm" onSubmit={handleSubmit}>
          <div>   
         <button onClick={toggleDark}>Dark Mode</button>
         </div>
         <label htmlFor="search" data-testid="search">Find a player!</label><br/>
         <input
+        data-testid='content-input'
         id = "search"
         name="search"
         placeholder="Search Player"

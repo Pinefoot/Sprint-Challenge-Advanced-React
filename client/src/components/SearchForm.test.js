@@ -9,3 +9,16 @@ test('search box displays', ()=>{
     const labelText = getByLabelText(/Find a player!/i)
     expect(labelText).toBeVisible();
 })
+
+test('search form searches', async()=>{
+    const {getAllByLabelText, getByTestId} = render (<SearchForm/>);
+    const nameInput = getByTestId('content-input')
+    
+    fireEvent.change(nameInput, {target:{value: 'Alex'}});
+
+   
+
+    const formText = getByTestId('searchForm');
+    expect(formText).toBeInTheDocument();
+    expect(nameInput.value).toBe('Alex');
+})
