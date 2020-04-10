@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useForm } from "../hooks/useForm";
+import {useLocalStorage} from "../hooks/useLocalStorage";
 import { useDarkMode } from "../hooks/useDarkMode";
 
 
@@ -9,7 +10,7 @@ export function SearchForm(props) {
         e.preventDefault();
         setDarkMode(!darkMode);
     }
-    
+
     const[form, handleChange] = useForm();
     const handleSubmit = event => {
         event.preventDefault();

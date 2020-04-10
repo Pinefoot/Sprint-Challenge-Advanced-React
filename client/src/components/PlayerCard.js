@@ -7,9 +7,9 @@ function PlayerCard (props){
             {props.value.map(players => {
                 return(
                     <div key={players.id} className = 'player-cards'>
-                        <p>Name: {players.name}</p>
-                        <p>Country: {players.country}</p>
-                        <p>Searches: {players.searches}</p>
+                        <p data-testid="name">Name: {players.name}</p>
+                        <p data-testid="country">Country: {players.country}</p>
+                        <p data-testid="searches">Searches: {players.searches}</p>
                         </div>
                 )
             })}
