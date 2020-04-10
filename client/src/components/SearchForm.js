@@ -9,7 +9,7 @@ export function SearchForm(props) {
         e.preventDefault();
         setDarkMode(!darkMode);
     }
-
+    
     const[form, handleChange] = useForm();
     const handleSubmit = event => {
         event.preventDefault();
