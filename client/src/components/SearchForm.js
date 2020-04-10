@@ -4,7 +4,7 @@ import {useLocalStorage} from "../hooks/useLocalStorage";
 import { useDarkMode } from "../hooks/useDarkMode";
 
 
-export function SearchForm(props) {
+function SearchForm(props) {
     const[darkMode, setDarkMode] = useDarkMode('Darkened');
     const toggleDark = e => {
         e.preventDefault();
@@ -34,3 +34,4 @@ export function SearchForm(props) {
         </form>
     )
 }
+export default SearchForm;

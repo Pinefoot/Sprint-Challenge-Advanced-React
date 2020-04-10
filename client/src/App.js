@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import PlayerCard from './components/PlayerCard';
 import axios from 'axios';
-import { SearchForm } from './components/SearchForm';
+import  SearchForm  from './components/SearchForm';
 
 
 
